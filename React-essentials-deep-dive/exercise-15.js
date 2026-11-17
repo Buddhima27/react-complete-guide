@@ -1,0 +1,20 @@
+//Button.js
+
+export default function Button({ children, mode = 'filled', Icon, ...props }) {
+
+  let cssClasses = `button ${mode}-button`;
+  if (Icon) {
+    cssClasses += ' icon-button';
+  }
+
+  return (
+    <button className={cssClasses} {...props}>
+      {Icon && (
+        <span className="button-icon">
+          <Icon />
+        </span>
+      )}
+      <span>{children}</span>
+    </button>
+  );
+}
